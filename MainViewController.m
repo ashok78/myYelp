@@ -10,14 +10,14 @@
 #import "myYelpClient.h"
 #import "Business.h"
 #import "BusinessCell.h"
-
+#import "FilterViewController.h"
 
 NSString * const kYelpConsumerKey = @"O7Vz5WYJU2840gWsBNbmzg";
 NSString * const kYelpConsumerSecret = @"cON2E2fYvsq6h7knf5A0pV1vLxk";
 NSString * const kYelpToken = @"H_cWsuAWtItZjv6nriX09q_EqsSDXGls";
 NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
 
-@interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, FilterViewControllerDelegate>
 @property (nonatomic, strong) myYelpClient *client;
 @property (nonatomic, strong) NSArray * businesses;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -30,20 +30,7 @@ NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.client = [[myYelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
-
-        [self.client searchWithTerm:@"Thai" success:^(AFHTTPRequestOperation *operation, id response) {
-            NSLog(@"response: %@", response);
-            
-            NSArray *businessDictionaries = response[@"businesses"];
-            
-            self.businesses = [Business businessesWithDictionaries:businessDictionaries];
-            [self.tableView reloadData];
-
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"error: %@", [error description]);
-        }];
-        
+        [self fetchBusinessesWithQuery:@"Restaurants" params:nil];
     }
     return self;
 }
@@ -57,11 +44,10 @@ NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
     
-    self.tableView.rowHeight = 200;
-    //UITableViewAutomaticDimension;
-    
-
-    
+    self.tableView.rowHeight = 90;
+    //UISearchBar *searchBar = [[UISearchBar alloc] init];
+    self.navigationItem.titleView = [[UISearchBar alloc] init];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Filters" style:UIBarButtonItemStylePlain target:self action:@selector(onFilterButton)];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -72,8 +58,6 @@ NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"Number of businesses %d", self.businesses.count);
-    
     return self.businesses.count;
 }
 
@@ -84,6 +68,36 @@ NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
     cell.business = self.businesses[indexPath.row];
     
     return cell;
+}
+
+- (void)filterViewController:(FilterViewController *)filtersViewController didChangeFilters:(NSDictionary *)filters{
+    [self fetchBusinessesWithQuery:@"Restaurants" params:filters];
+    NSLog(@"filters changed %@", filters);
+}
+
+- (void) onFilterButton{
+    NSLog(@"Filter button clicked");
+    
+    FilterViewController *vc = [[FilterViewController alloc] init];
+    
+    vc.delegate = self;
+    
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self presentViewController:nvc animated:YES completion:nil];
+}
+
+- (void) fetchBusinessesWithQuery:(NSString *) query params:(NSDictionary *) params {
+    [self.client searchWithTerm:query params:params success:^(AFHTTPRequestOperation *operation, id response) {
+        NSArray *businessDictionaries = response[@"businesses"];
+        
+        self.businesses = [Business businessesWithDictionaries:businessDictionaries];
+        [self.tableView reloadData];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", [error description]);
+    }];
 }
 
 @end

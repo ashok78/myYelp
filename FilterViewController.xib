@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController">
             <connections>
-                <outlet property="tableView" destination="iMI-f4-JIk" id="vIj-KU-jaH"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="fAd-ST-CtR"/>
+                <outlet property="tableView" destination="9Ba-TU-00T" id="hQo-sh-xns"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iMI-f4-JIk">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9Ba-TU-00T">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -23,10 +23,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="iMI-f4-JIk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6sG-5v-9NJ"/>
-                <constraint firstItem="iMI-f4-JIk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7s4-dw-hdL"/>
-                <constraint firstAttribute="trailing" secondItem="iMI-f4-JIk" secondAttribute="trailing" id="AjG-0g-wxm"/>
-                <constraint firstAttribute="bottom" secondItem="iMI-f4-JIk" secondAttribute="bottom" id="Ch6-dA-4QH"/>
+                <constraint firstAttribute="bottom" secondItem="9Ba-TU-00T" secondAttribute="bottom" id="Iqf-aG-ndE"/>
+                <constraint firstAttribute="trailing" secondItem="9Ba-TU-00T" secondAttribute="trailing" id="LFa-1q-mfF"/>
+                <constraint firstItem="9Ba-TU-00T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xo6-Ex-zhz"/>
+                <constraint firstItem="9Ba-TU-00T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tUb-08-wOm"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

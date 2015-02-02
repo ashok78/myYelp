@@ -13,6 +13,9 @@
 
 - (void)awakeFromNib
 {
+    self.nameLabel.preferredMaxLayoutWidth = self.nameLabel.frame.size.width;
+    self.imageUrl.layer.cornerRadius = 3;
+    self.imageUrl.clipsToBounds = YES;
     // Initialization code
 }
 
@@ -28,12 +31,18 @@
     
     [self.imageUrl setImageWithURL:[NSURL URLWithString:self.business.imageUrl]];
     self.nameLabel.text = self.business.name;
-    self.distanceLabel.text = [NSString stringWithFormat:@"%f miles", self.business.distance];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%0.2f miles", self.business.distance];
     [self.ratingUrl setImageWithURL:[NSURL URLWithString:self.business.ratingImageUrl]];
     self.numReviewLabel.text = [NSString stringWithFormat:@"%d Reviews", self.business.numReviews];
     self.addressLabel.text = self.business.address;
     self.categoriesLabel.text = self.business.categories;
     
+}
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.nameLabel.preferredMaxLayoutWidth = self.nameLabel.frame.size.width;
+
 }
 
 @end

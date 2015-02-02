@@ -21,7 +21,7 @@
                             <constraint firstAttribute="height" constant="70" id="U0m-eo-dWq"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Chaat Bhavan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUz-2g-OIA">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Chaat Bhavan" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="173" translatesAutoresizingMaskIntoConstraints="NO" id="wUz-2g-OIA">
                         <rect key="frame" x="86" y="8" width="173" height="15"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -29,19 +29,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250 Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFr-3n-hbr">
-                        <rect key="frame" x="173" y="21" width="60" height="19"/>
+                        <rect key="frame" x="176" y="23" width="60" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.07 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8e-ni-ejt">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0.07 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8e-ni-ejt">
                         <rect key="frame" x="267" y="8" width="48" height="12"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHd-qf-wAL">
-                        <rect key="frame" x="303" y="24" width="12" height="12"/>
+                        <rect key="frame" x="303" y="28" width="12" height="12"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8O-Yy-bHF">
-                        <rect key="frame" x="84" y="22" width="84" height="17"/>
+                        <rect key="frame" x="84" y="24" width="84" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="84" id="Kdf-NV-GEj"/>
@@ -70,9 +70,9 @@
                 <constraints>
                     <constraint firstItem="r8e-ni-ejt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="033-dV-N88"/>
                     <constraint firstItem="WKb-rT-0jx" firstAttribute="top" secondItem="HNb-di-1Ta" secondAttribute="bottom" constant="1" id="A0u-XH-Dr5"/>
-                    <constraint firstItem="qFr-3n-hbr" firstAttribute="leading" secondItem="l8O-Yy-bHF" secondAttribute="trailing" constant="5" id="BBb-uF-azk"/>
-                    <constraint firstItem="rHd-qf-wAL" firstAttribute="top" secondItem="r8e-ni-ejt" secondAttribute="bottom" constant="4" id="BL0-sI-o98"/>
-                    <constraint firstItem="l8O-Yy-bHF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="EE8-W4-n2Y"/>
+                    <constraint firstItem="qFr-3n-hbr" firstAttribute="leading" secondItem="l8O-Yy-bHF" secondAttribute="trailing" constant="8" id="BBb-uF-azk"/>
+                    <constraint firstItem="rHd-qf-wAL" firstAttribute="top" secondItem="r8e-ni-ejt" secondAttribute="bottom" constant="8" id="BL0-sI-o98"/>
+                    <constraint firstItem="l8O-Yy-bHF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="EE8-W4-n2Y"/>
                     <constraint firstItem="r8e-ni-ejt" firstAttribute="leading" secondItem="wUz-2g-OIA" secondAttribute="trailing" constant="8" id="Pzm-d5-qfI"/>
                     <constraint firstAttribute="trailing" secondItem="r8e-ni-ejt" secondAttribute="trailing" constant="5" id="Vbo-2X-XWh"/>
                     <constraint firstItem="wUz-2g-OIA" firstAttribute="leading" secondItem="VPW-d4-8rp" secondAttribute="trailing" constant="8" id="WI2-h9-ftY"/>
@@ -85,21 +85,17 @@
                     <constraint firstItem="qFr-3n-hbr" firstAttribute="centerY" secondItem="l8O-Yy-bHF" secondAttribute="centerY" id="jD8-ob-3k8"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VPW-d4-8rp" secondAttribute="bottom" constant="8" id="jiT-kA-ecd"/>
                     <constraint firstItem="VPW-d4-8rp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="lgp-g4-5p8"/>
-                    <constraint firstItem="qFr-3n-hbr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="nAL-Zy-lgV"/>
+                    <constraint firstItem="qFr-3n-hbr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="nAL-Zy-lgV"/>
                     <constraint firstItem="l8O-Yy-bHF" firstAttribute="leading" secondItem="VPW-d4-8rp" secondAttribute="trailing" constant="6" id="nml-B9-eZe"/>
-                    <constraint firstItem="HNb-di-1Ta" firstAttribute="top" secondItem="qFr-3n-hbr" secondAttribute="bottom" constant="6" id="xeJ-Eb-Bgs"/>
+                    <constraint firstItem="HNb-di-1Ta" firstAttribute="top" secondItem="qFr-3n-hbr" secondAttribute="bottom" constant="4" id="xeJ-Eb-Bgs"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="address" destination="HNb-di-1Ta" id="tIi-Iz-Z8S"/>
                 <outlet property="addressLabel" destination="HNb-di-1Ta" id="9Td-Bf-8f4"/>
                 <outlet property="categoriesLabel" destination="WKb-rT-0jx" id="lg8-VE-at0"/>
-                <outlet property="distance" destination="r8e-ni-ejt" id="rNZ-qq-kre"/>
                 <outlet property="distanceLabel" destination="r8e-ni-ejt" id="hYw-xR-MNj"/>
                 <outlet property="imageUrl" destination="VPW-d4-8rp" id="MIq-oC-aqx"/>
-                <outlet property="name" destination="wUz-2g-OIA" id="V90-qP-OOT"/>
                 <outlet property="nameLabel" destination="wUz-2g-OIA" id="RFe-Do-MrI"/>
-                <outlet property="numReview" destination="qFr-3n-hbr" id="Gpy-gy-J0F"/>
                 <outlet property="numReviewLabel" destination="qFr-3n-hbr" id="cp6-2U-0C8"/>
                 <outlet property="ratingUrl" destination="l8O-Yy-bHF" id="YSK-Jc-pZa"/>
             </connections>
