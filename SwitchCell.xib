@@ -32,7 +32,6 @@
                     <constraint firstItem="OIg-Od-C8j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="27" id="7pr-6I-ZJc"/>
                     <constraint firstItem="OIg-Od-C8j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="TVK-iq-CkK"/>
                     <constraint firstAttribute="trailing" secondItem="any-Fg-B1Z" secondAttribute="trailing" constant="20" id="gOR-wI-Gmv"/>
-                    <constraint firstItem="any-Fg-B1Z" firstAttribute="leading" secondItem="OIg-Od-C8j" secondAttribute="trailing" constant="148" id="iKN-qZ-jJZ"/>
                     <constraint firstItem="any-Fg-B1Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="ivp-p1-BLK"/>
                 </constraints>
             </tableViewCellContentView>

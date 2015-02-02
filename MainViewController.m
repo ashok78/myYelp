@@ -17,10 +17,11 @@ NSString * const kYelpConsumerSecret = @"cON2E2fYvsq6h7knf5A0pV1vLxk";
 NSString * const kYelpToken = @"H_cWsuAWtItZjv6nriX09q_EqsSDXGls";
 NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
 
-@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, FilterViewControllerDelegate>
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, FilterViewControllerDelegate, UISearchBarDelegate>
 @property (nonatomic, strong) myYelpClient *client;
 @property (nonatomic, strong) NSArray * businesses;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UISearchBar *searchBar;
 @end
 
 @implementation MainViewController
@@ -45,8 +46,11 @@ NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
     [self.tableView registerNib:[UINib nibWithNibName:@"BusinessCell" bundle:nil] forCellReuseIdentifier:@"BusinessCell"];
     
     self.tableView.rowHeight = 90;
-    //UISearchBar *searchBar = [[UISearchBar alloc] init];
-    self.navigationItem.titleView = [[UISearchBar alloc] init];
+    self.searchBar = [[UISearchBar alloc] init];
+    self.navigationItem.titleView = self.searchBar;
+    
+    self.searchBar.delegate = self;
+
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Filters" style:UIBarButtonItemStylePlain target:self action:@selector(onFilterButton)];
     // Do any additional setup after loading the view from its nib.
 }
@@ -70,7 +74,7 @@ NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
     return cell;
 }
 
-- (void)filterViewController:(FilterViewController *)filtersViewController didChangeFilters:(NSDictionary *)filters{
+ - (void)filterViewController:(FilterViewController *)filtersViewController didChangeFilters:(NSDictionary *)filters{
     [self fetchBusinessesWithQuery:@"Restaurants" params:filters];
     NSLog(@"filters changed %@", filters);
 }
@@ -99,5 +103,29 @@ NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
         NSLog(@"error: %@", [error description]);
     }];
 }
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    NSLog(@"Cancelled");
+    [self.searchBar resignFirstResponder];
+    [self.searchBar setShowsCancelButton:NO animated:YES];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar setShowsCancelButton:NO animated:YES];
+    [self.searchBar resignFirstResponder];
+    [self fetchBusinessesWithQuery:self.searchBar.text params:nil];
+}
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    [self.searchBar setShowsCancelButton:YES animated:YES];
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    //[self.searchBar setShowsCancelButton:NO animated:YES];
+}
+
 
 @end
