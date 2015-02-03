@@ -10,14 +10,14 @@
 #import "myYelpClient.h"
 #import "Business.h"
 #import "BusinessCell.h"
-#import "FilterViewController.h"
+#import "FiltersNewViewController.h"
 
 NSString * const kYelpConsumerKey = @"O7Vz5WYJU2840gWsBNbmzg";
 NSString * const kYelpConsumerSecret = @"cON2E2fYvsq6h7knf5A0pV1vLxk";
 NSString * const kYelpToken = @"H_cWsuAWtItZjv6nriX09q_EqsSDXGls";
 NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
 
-@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, FilterViewControllerDelegate, UISearchBarDelegate>
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, FiltersNewViewControllerDelegate, UISearchBarDelegate>
 @property (nonatomic, strong) myYelpClient *client;
 @property (nonatomic, strong) NSArray * businesses;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -74,7 +74,7 @@ NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
     return cell;
 }
 
- - (void)filterViewController:(FilterViewController *)filtersViewController didChangeFilters:(NSDictionary *)filters{
+ - (void)filtersNewViewController:(FiltersNewViewController *)filtersNewViewController didChangeFilters:(NSDictionary *)filters{
     [self fetchBusinessesWithQuery:@"Restaurants" params:filters];
     NSLog(@"filters changed %@", filters);
 }
@@ -82,7 +82,7 @@ NSString * const kYelpTokenSecret = @"bkxV0GPLlTgH6sOaB_KFgGk_vm4";
 - (void) onFilterButton{
     NSLog(@"Filter button clicked");
     
-    FilterViewController *vc = [[FilterViewController alloc] init];
+    FiltersNewViewController *vc = [[FiltersNewViewController alloc] init];
     
     vc.delegate = self;
     

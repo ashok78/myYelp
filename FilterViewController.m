@@ -7,7 +7,6 @@
 //
 
 #import "FilterViewController.h"
-#import "SwitchCell.h"
 
 @interface FilterViewController () <UITableViewDataSource, UITableViewDelegate, SwitchCellProtocol>
 
