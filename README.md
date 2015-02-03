@@ -1,22 +1,25 @@
 # myYelp
 Ashok's myYelp implementation - iOS class
 
-This is an iOS demo application for showing movies from rotten tomato and showing detail page as second view on tap in the list.
+This is an iOS demo application for showing business listing as well filters page.
 
-Time spent: 5 hours spent in total
+Time spent: 10 hours spent in total
 
 Completed user stories:
 
- * [x] Required: User can view a list of latest box office movies including title, cast and tomatoes rating
- * [x] Required: User can click on a movie in the list to bring up a details page with additional information such as synopsis
- * [x] Optional: Placeholder image is used for movie posters loaded in from the network
+ * [x] Required: Table rows should be dynamic height according to the content height
+ * [x] Required: Custom cells should have the proper Auto Layout constraints
+ * [x] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does).
+ * [x] The filters you should actually have are: category, sort (best match, distance, highest rated), radius (meters), deals (on/off).
+ * []The filters table should be organized into sections as in the mock.
+ * []You can use the default UISwitch for on/off states.
+ * []Clicking on the "Search" button should dismiss the filters page and trigger the search w/ the new filter settings
  
 Notes:
-
-Spent some time making the UI work across multiple phone resolutions by playing around with the RelativeLayout.
+I missed Thursday class as spent some time catching up class video to implement filter page using provided videos.
 
 Walkthrough of all user stories:
 
-![Video Walkthrough](anim_myyelp.gif)
+![Video Walkthrough](myYelp.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
